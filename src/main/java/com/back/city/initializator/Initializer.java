@@ -4,7 +4,7 @@ import com.back.city.entity.PasswordEntity;
 import com.back.city.entity.ProfileEntity;
 import com.back.city.entity.UserEntity;
 import com.back.city.repository.UserRepository;
-import com.back.city.list.UserStatus;
+import com.back.city.enums.UserStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

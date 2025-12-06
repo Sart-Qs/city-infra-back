@@ -1,12 +1,10 @@
 package com.back.city.services;
 
-import com.back.city.dto.user.FindUserResponse;
-import com.back.city.dto.user.UserProfileDTO;
+import com.back.city.dto.user.UserForChatRoom;
 import com.back.city.entity.UserEntity;
 import com.back.city.repository.UserRepository;
-import com.back.city.list.UserStatus;
+import com.back.city.enums.UserStatus;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,8 +21,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService{
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserEntity register (UserEntity userEntity){
         if(userRepository.existsByEmail(userEntity.getEmail())) {
@@ -76,9 +73,9 @@ public class UserService implements UserDetailsService{
         userRepository.save(userEntity);
     }
     //TODO поменять на поиск по ассоциации чтобы выводились похожие варианты и возвращать список а не 1 элемент
-    public FindUserResponse findUserByUserName(String userName){
+    public UserForChatRoom findUserByUserName(String userName){
         Optional<UserEntity> user = userRepository.findByUserName(userName);
-        return FindUserResponse.builder()
+        return UserForChatRoom.builder()
                 .id(user.get().getId())
                 .lastName(user.get().getLastName())
                 .firstName(user.get().getFirstName())

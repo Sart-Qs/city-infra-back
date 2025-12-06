@@ -1,6 +1,6 @@
 package com.back.city.entity;
 
-import com.back.city.list.UserStatus;
+import com.back.city.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
