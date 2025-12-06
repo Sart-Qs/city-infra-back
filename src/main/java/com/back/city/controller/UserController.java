@@ -1,7 +1,6 @@
 package com.back.city.controller;
 
-import com.back.city.dto.user.FindUserResponse;
-import com.back.city.dto.user.UserProfileDTO;
+import com.back.city.dto.user.UserForChatRoom;
 import com.back.city.dto.auth.JwtAuthResponse;
 import com.back.city.dto.auth.SingInRequest;
 import com.back.city.dto.auth.SingUpRequest;
@@ -34,7 +33,7 @@ public class UserController {
 
     //TODO поменять на поиск по ассоциации чтобы выводились похожие варианты и возвращать список а не 1 элемент
     @GetMapping("/getUserByUserName/{userName}")
-    public FindUserResponse findUserByUserName(@PathVariable String userName){
+    public UserForChatRoom findUserByUserName(@PathVariable String userName){
         return userService.findUserByUserName(userName);
     }
 }

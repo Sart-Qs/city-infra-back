@@ -9,7 +9,7 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-public class FindUserResponse {
+public class UserForChatRoom {
     private Long id;
     private String firstName;
     private String lastName;

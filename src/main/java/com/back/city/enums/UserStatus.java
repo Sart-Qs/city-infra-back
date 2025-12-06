@@ -1,4 +1,4 @@
-package com.back.city.list;
+package com.back.city.enums;
 
 public enum UserStatus {
     ONLINE, OFFLINE

@@ -17,7 +17,7 @@ public class ProfileEntity {
     private String aboutSelf;
     private String location;
 
-    public  ProfileEntity(){
+    public ProfileEntity(){
         this.userAvatar = "aboba";
         this.aboutSelf = "Здесь пока что ничего нет";
         this.location = "Воронеж, Россия";
