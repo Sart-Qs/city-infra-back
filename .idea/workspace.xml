@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="360d6a6b-fc71-4e2b-9b43-ae57f898e73d" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/city/mapper/UserMapper.java" afterDir="false" />
+    <list default="true" id="360d6a6b-fc71-4e2b-9b43-ae57f898e73d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/city/entity/LikeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/city/enums/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/city/mapper/ChatMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/city/mapper/EventMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/addForeingKey.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/create/createChatMessage.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/create/createChatRoom.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/create/createEvent.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/create/createPassword.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/create/createProfile.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changeset/create/createUser.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/sha1-checksums.bin" afterDir="false" />
@@ -15,33 +29,40 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/UserEntity$UserEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/UserEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/initializator/Initializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/initializator/Initializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/list/ChatType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/list/MessageStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/list/ReadStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/list/UserStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/controller/EventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/controller/EventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/event/EventResponse$EventResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/event/EventResponse$EventResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/event/EventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/event/EventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/user/FindUserResponse$FindUserResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/user/FindUserResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/user/UserProfileDTO$UserProfileDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/user/UserProfileDTO$UserProfileDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/user/UserProfileDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/dto/user/UserProfileDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/EventEntity$EventEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/EventEntity$EventEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/EventEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/entity/EventEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/ChatRoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/ChatRoomService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/EventService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/JwtHandshakeInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/JwtHandshakeInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/ProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/ProfileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/back/city/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/dto/user/FindUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/dto/user/UserForChatRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/entity/ProfileEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/entity/ProfileEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/initializator/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/initializator/Initializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/list/ChatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/enums/ChatType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/list/MessageStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/enums/MessageStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/list/ReadStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/enums/ReadStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/list/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/enums/UserStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/dto/event/EventResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/dto/event/EventResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/dto/user/UserProfileDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/dto/user/UserProfileDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/entity/ChatRoomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/entity/ChatRoomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/entity/EventEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/entity/EventEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/enums/MessageStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/enums/MessageStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/enums/ReadStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/services/ChatRoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/services/ChatRoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/services/JwtHandshakeInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/services/JwtHandshakeInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/services/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/services/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/city/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/city/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,31 +74,69 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="city" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Enum" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Liquibase Changelog" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Sart-Qs&quot;
-  }
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;Sart-Qs&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {}
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Sart-Qs/city-infra-back.git&quot;,
     &quot;accountId&quot;: &quot;594b6490-ff0b-430b-8fe7-61c510b4100b&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Sart-Qs&quot;,
+    &quot;repository&quot;: &quot;city-infra-back&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -86,41 +145,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.city [:com.back.city.CityApplication.main()].executor": "Run",
-    "Gradle.city-infra-back [:com.back.city.CityApplication.main()].executor": "Run",
-    "Gradle.city.executor": "Run",
-    "Gradle.Загрузить исходники.executor": "Run",
-    "Gradle.Сборка city-infra-back.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/city-infra/city-infra-back",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "Приложение.Без названия.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.city [:com.back.city.CityApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.city-infra-back [:com.back.city.CityApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.city.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Загрузить исходники.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Сборка city-infra-back.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CityApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/add-liquid-base&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/city-infra/city-infra-back&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Проект&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;Приложение.Без названия.executor&quot;: &quot;Run&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.back.city.services" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Без названия" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-24" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.back.city.CityApplication" />
-      <module name="city.main" />
+    <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="city-infra-back" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -129,7 +214,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762676353646</updated>
+      <workItem from="1765482790075" duration="5333000" />
+      <workItem from="1765488747276" duration="1120000" />
+      <workItem from="1765489881039" duration="16000" />
+      <workItem from="1765489903635" duration="11000" />
     </task>
+    <task id="LOCAL-00001" summary="fetch/add user mapper">
+      <option name="closed" value="true" />
+      <created>1765041603004</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765041603004</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fetch/add user mapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="fetch/add user mapper" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

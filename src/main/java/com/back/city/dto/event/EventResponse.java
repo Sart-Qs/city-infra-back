@@ -1,5 +1,6 @@
 package com.back.city.dto.event;
 
+import com.back.city.entity.UserEntity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class EventResponse {
     private Long id;
     private Float[] coordinates;
-    private Long userId;
+    private UserEntity user;
     private String description;
     private String avatar;
 }
