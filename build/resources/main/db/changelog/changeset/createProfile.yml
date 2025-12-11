@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-profile
+      author: Sart-Qs
+      changes:
+        - createTable:
+            tableName: profile
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: user_avatar
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: about_self
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: location
+                  type: varchar
+                  constraints:
+                    nullable: false

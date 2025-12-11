@@ -1,0 +1,66 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size:
+        50MB
+      max-file-size:
+        10MB
+      enabled:
+        true
+  datasource:
+    url:
+      jdbc:postgresql://localhost:5432/city
+    username:
+      postgres
+    password:
+      112233
+    driver-class-name:
+      org.postgresql.Driver
+
+  application:
+    name:
+      city
+  session:
+    jdbc:
+      initialize-schema:
+        always
+  jpa:
+    hibernate:
+      ddl-auto:
+        none
+
+jwt:
+  secret:
+    213441234
+
+token:
+  signing:
+    key:
+      U3VwZXJTZWN1cmVLZXlGb3JKV1RDbXVzdG9tU2VjcmV0S2V5MTIz
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL:
+          DEBUG
+      springframework:
+        security:
+          DEBUG
+    com:
+      back:
+        city:
+          DEBUG
+
+
+server:
+  port:
+    8081
+minio:
+  url:
+    http://localhost:9000
+  accessKey:
+    minioadmin
+  secretKey:
+    minioadmin
+

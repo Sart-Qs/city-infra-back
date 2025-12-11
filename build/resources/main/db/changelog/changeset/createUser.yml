@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user
+      author: Sart-Qs
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: profile_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: smallint
+                  constraints:
+                    nullable: false

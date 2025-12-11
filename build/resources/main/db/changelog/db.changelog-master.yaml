@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/createEvent.yml
+  - include:
+      file: db/changelog/changeset/createUser.yml
+  - include:
+      file: db/changelog/changeset/createPassword.yml
+  - include:
+      file: db/changelog/changeset/createProfile.yml
+  - include:
+      file: db/changelog/changeset/addForeingKey.yml
