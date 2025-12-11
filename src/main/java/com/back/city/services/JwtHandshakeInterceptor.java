@@ -23,7 +23,6 @@ public class JwtHandshakeInterceptor extends DefaultHandshakeHandler {
     @Override
     protected Principal determineUser(ServerHttpRequest request, WebSocketHandler wsHandler, Map<String, Object> attributes) {
         var token = request.getHeaders().get(HEADER_NAME);
-        System.out.println("token"+token);
         if (token != null && !token.isEmpty()){
             String userName = jwtService.extractUserName(String.valueOf(token));
             if(userName != null){

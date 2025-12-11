@@ -15,7 +15,6 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class ChatRoomService {
-    private final ProfileRepository profileRepository;
     private final UserRepository userRepository;
     private final ChatRoomRepository chatRoomRepository;
 

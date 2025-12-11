@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-Foreing-key
+      author: Sart-Qs
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: password_id
+            baseTableName: users
+            constraintName: user_password_fk
+            referencedColumnNames: id
+            referencedTableName: password
+
+        - addForeignKeyConstraint:
+            baseColumnNames: profile_id
+            baseTableName: users
+            constraintName: user_profile_fk
+            referencedTableName: profile
+            referencedColumnNames: id

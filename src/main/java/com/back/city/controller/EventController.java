@@ -6,6 +6,7 @@ import com.back.city.services.EventService;
 import io.minio.errors.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,4 +38,10 @@ public class EventController {
     public List<EventEntity> getEventsByUserId(@PathVariable Long id){
         return eventService.findEventsByUserId(id);
     }
+
+//    @PostMapping("{id}/likes")
+//    public ResponseEntity setLikes(@PathVariable("id") Long eventId, @RequestBody boolean set){
+//
+//        return ResponseEntity.ok("likeSet");
+//    }
 }

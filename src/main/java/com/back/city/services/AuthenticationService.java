@@ -6,6 +6,7 @@ import com.back.city.dto.auth.SingInRequest;
 import com.back.city.dto.auth.SingUpRequest;
 import com.back.city.entity.PasswordEntity;
 import com.back.city.entity.UserEntity;
+import com.back.city.mapper.UserMapper;
 import com.back.city.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -24,6 +25,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     private final UserService userService;
+    private final UserMapper userMapper;
 
 
     public JwtAuthResponse singIn(SingInRequest request) throws UsernameNotFoundException{
@@ -40,13 +42,7 @@ public class AuthenticationService {
     }
 
     public JwtAuthResponse singUp(SingUpRequest request){
-        UserEntity newUser = UserEntity.builder()
-                .userName(request.getUserName())
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .email(request.getEmail())
-                .passwordEntity(new PasswordEntity(request.getPassword()))
-                .build();
+        UserEntity newUser = userMapper.toUserEntity(request);
         userRepository.save(newUser);
         var jwt = jwtService.generateToken(newUser);
         return new JwtAuthResponse(jwt);
