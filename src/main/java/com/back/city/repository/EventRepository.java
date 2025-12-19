@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends JpaRepository<EventEntity, Long> {
+    //todo join fetch
     List<EventEntity> findAllEventsByUserId(Long userId);
 }

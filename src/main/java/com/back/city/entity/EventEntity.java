@@ -20,6 +20,7 @@ public class EventEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //todo почему нельзя использовать float в точных вычислениях
     private Float[] coordinates;
     private Long userId;
     private String description;

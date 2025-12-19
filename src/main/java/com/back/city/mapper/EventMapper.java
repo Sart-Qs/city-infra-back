@@ -28,6 +28,7 @@ public interface EventMapper {
 
 
     default EventEntity toEventEntity(EventRequest event, List<String> files){
+        //todo rename eventDate
         return EventEntity.builder()
                 .id(event.getId())
                 .userId(event.getUserId())
