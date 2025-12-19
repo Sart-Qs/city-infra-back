@@ -32,6 +32,7 @@ public class EventService {
 
 
     //TODO поменять на responeEntity ok
+    //TODO прочитать о транзакциях в целом, транзакции в sql, @Transactional spring
     @Transactional
     public EventResponse saveEvent(EventRequest event, List<MultipartFile> files) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
         List<String> fileUrl = minIOService.uploadFile(files);
@@ -49,6 +50,7 @@ public class EventService {
     @Transactional
     public List<EventResponse> findAllEvents(){
         List<EventEntity> eventEntities = eventRepository.findAll();
+        //todo на 100 ивентов всего будет произведено 101 запрос (1 на список, 100 на каждого пользователя), join fetch
         return eventEntities.stream().map((e) ->{
             UserDTO user = userMapper.toUserDTO(userRepository.findUserById(e.getUserId()));
             return eventMapper.toEventResponse(e, user);
