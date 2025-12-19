@@ -13,11 +13,19 @@ import org.mapstruct.MappingConstants;
 import org.mapstruct.Named;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface UserMapper {
 
-    UserDTO toUserDTO(UserEntity user);
+    default UserDTO toUserDTO(UserEntity user){
+        return UserDTO.builder()
+                .id(user.getId())
+                .lastName(user.getLastName())
+                .firstName(user.getFirstName())
+                .email(user.getEmail())
+                .build();
+    }
     List<UserDTO> toUserDTO(List<UserEntity> users);
     default UserProfileDTO toUserProfileDTO(UserEntity user , List<EventEntity> events){
         ProfileEntity profile = user.getProfileEntity();
@@ -44,4 +52,6 @@ public interface UserMapper {
 
 
     UserEntity toUserEntity(SingUpRequest request);
+
+
 }

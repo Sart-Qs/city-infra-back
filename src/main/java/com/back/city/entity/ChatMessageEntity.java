@@ -14,16 +14,13 @@ import java.util.Date;
 @Builder
 public class ChatMessageEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String chatId;
-    private Long senderId;
-    private Long recipientId;
+    private Long chatId;
+    private Long userId;
     private String content;
     private Date timeStamp;
-    //private ReadStatus readStatus;
     //private MessageStatus status;
 }
 
 //TODO Добавить статусы
-//TODO Поробовать использовать manyToOne для чата

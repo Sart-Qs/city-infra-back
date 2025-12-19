@@ -1,6 +1,7 @@
 package com.back.city.controller;
 
 import com.back.city.dto.event.EventRequest;
+import com.back.city.dto.event.EventResponse;
 import com.back.city.entity.EventEntity;
 import com.back.city.services.EventService;
 import io.minio.errors.*;
@@ -24,12 +25,13 @@ public class EventController {
     private final EventService eventService;
 
     @GetMapping("/findAll")
-    public List<EventEntity> getAllEvents(){
+    public List<EventResponse> getAllEvents(){
+
         return eventService.findAllEvents();
     }
 
     @PostMapping("/saveEvent")
-    public EventEntity saveEvent (@RequestParam("file") List<MultipartFile> file, @RequestPart("event") EventRequest event) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
+    public EventResponse saveEvent (@RequestParam("file") List<MultipartFile> file, @RequestPart("event") EventRequest event) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
         System.out.println(file);
         return eventService.saveEvent(event, file);
     }

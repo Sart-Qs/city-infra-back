@@ -14,6 +14,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -41,12 +42,14 @@ public class AuthenticationService {
         return new JwtAuthResponse(jwt);
     }
 
+
     public JwtAuthResponse singUp(SingUpRequest request){
         UserEntity newUser = userMapper.toUserEntity(request);
         userRepository.save(newUser);
         var jwt = jwtService.generateToken(newUser);
         return new JwtAuthResponse(jwt);
     }
+
 
     public void notifyUserOnline(SingInRequest request){
         Optional<UserEntity> user = userRepository.findByUserName(request.getUserName());

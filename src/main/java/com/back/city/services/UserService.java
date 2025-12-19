@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +24,7 @@ public class UserService implements UserDetailsService{
 
     private final UserRepository userRepository;
 
+    @Transactional
     public UserEntity register (UserEntity userEntity){
         if(userRepository.existsByEmail(userEntity.getEmail())) {
             throw new RuntimeException("Пользователь с таким email уже существует");
@@ -34,6 +36,7 @@ public class UserService implements UserDetailsService{
         return userRepository.save(userEntity);
     }
 
+    @Transactional
     public UserEntity getByUsername(String userName) {
         return userRepository.findByUserName(userName)
                 .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден"));
@@ -46,17 +49,19 @@ public class UserService implements UserDetailsService{
         return getByUsername(userName);
     }
 
+    @Transactional
     public Optional<UserEntity> getUser(String userName){
         return userRepository.findByUserName(userName);
     }
 
 
     @Override
+    @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity userEntity = getByUsername(username);
         userEntity.setStatus(UserStatus.ONLINE);
         userRepository.save(userEntity);
-
+        //TODO добавить нормальные роли
         List<GrantedAuthority> authorities = List.of(
                 new SimpleGrantedAuthority("ROLE_USER")
         );
@@ -68,11 +73,16 @@ public class UserService implements UserDetailsService{
                 .build();
     }
 
+    @Transactional
     public void disconnectUser(UserEntity userEntity){
         userEntity.setStatus(UserStatus.ONLINE);
         userRepository.save(userEntity);
     }
+
+
     //TODO поменять на поиск по ассоциации чтобы выводились похожие варианты и возвращать список а не 1 элемент
+    //TODO Убрать это дто и сделать маппер под обычный UserDTO
+    @Transactional
     public UserForChatRoom findUserByUserName(String userName){
         Optional<UserEntity> user = userRepository.findByUserName(userName);
         return UserForChatRoom.builder()

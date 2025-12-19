@@ -28,7 +28,6 @@ spring:
     hibernate:
       ddl-auto:
         none
-
 jwt:
   secret:
     213441234

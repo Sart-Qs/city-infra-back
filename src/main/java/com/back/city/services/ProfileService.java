@@ -11,6 +11,7 @@ import com.back.city.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class ProfileService {
     private final EventRepository eventRepository;
     private final UserMapper userMapper;
 
+    @Transactional
     public UserProfileDTO getUserProfile(Long id){
         UserEntity userData = userRepository.getById(id);
         List<EventEntity> events = eventRepository.findAllEventsByUserId(id);

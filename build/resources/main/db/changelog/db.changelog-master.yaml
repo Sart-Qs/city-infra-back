@@ -1,11 +1,5 @@
 databaseChangeLog:
+  - includeAll:
+      path: db/changelog/changelog/create
   - include:
-      file: db/changelog/changeset/createEvent.yml
-  - include:
-      file: db/changelog/changeset/createUser.yml
-  - include:
-      file: db/changelog/changeset/createPassword.yml
-  - include:
-      file: db/changelog/changeset/createProfile.yml
-  - include:
-      file: db/changelog/changeset/addForeingKey.yml
+      file: db/changelog/changelog/addKey/addKey.sql

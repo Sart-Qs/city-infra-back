@@ -11,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 public class ProfileEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String userAvatar;
     private String aboutSelf;

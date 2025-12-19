@@ -26,11 +26,10 @@ public class MinIoService {
             if (file.isEmpty()) {
                 continue;
             }
-
             try {
                 //TODO Добавть уникальный префикс
                 String objectName = file.getOriginalFilename();
-
+                //TODO добавить маппер
                 minioClient.putObject(PutObjectArgs.builder()
                         .bucket(bucketName)
                         .object(objectName)
@@ -47,14 +46,10 @@ public class MinIoService {
                 );
 
                 urls.add(url);
-                log.info("Файл загружен: {} → {}", file.getOriginalFilename(), url);
-
             } catch (Exception e) {
-                log.error("Ошибка загрузки файла " + file.getOriginalFilename(), e);
                 throw new RuntimeException("Не удалось загрузить файл", e);
             }
         }
-
         return urls;
     }
 }
