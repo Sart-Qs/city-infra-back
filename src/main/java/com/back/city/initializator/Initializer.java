@@ -14,7 +14,9 @@ public class Initializer {
     private UserRepository userRepository;
 
     public void initial(){
-        userRepository.save(new UserEntity(null,"dsa", "ewq", "ewq", "@w1", new PasswordEntity("123"), new ProfileEntity(), UserStatus.OFFLINE));
-        userRepository.save(new UserEntity(null,"qweq", "dsagvb", "eqwds", "@asdcxx", new PasswordEntity("123"), new ProfileEntity(), UserStatus.OFFLINE));
+        if (!userRepository.existsByUserName("qweq")){
+            userRepository.save(new UserEntity(null,"dsa", "ewq", "ewq", "@w1", new PasswordEntity("123"), new ProfileEntity(), UserStatus.OFFLINE));
+            userRepository.save(new UserEntity(null,"qweq", "dsagvb", "eqwds", "@asdcxx", new PasswordEntity("123"), new ProfileEntity(), UserStatus.OFFLINE));
+        }
     }
 }

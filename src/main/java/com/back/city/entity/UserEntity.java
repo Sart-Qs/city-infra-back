@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserEntity implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String userName;
     private String firstName;

@@ -2,5 +2,8 @@
 <project version="4">
   <component name="DataSourcePerFileMappings">
     <file url="file://$PROJECT_DIR$/.idea/queries/Query.sql" value="6fabaf76-14c6-4aef-befb-0db7a4146a0c" />
+    <file url="file://$PROJECT_DIR$/.idea/queries/Query_1.sql" value="24e93c82-8a75-4989-86f3-a7b08d503c43" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/changelog/changelog/addKey/addKey.sql" value="24e93c82-8a75-4989-86f3-a7b08d503c43" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/changelog/changelog/create/cereatePassword.sql" value="24e93c82-8a75-4989-86f3-a7b08d503c43" />
   </component>
 </project>

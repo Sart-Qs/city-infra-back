@@ -16,7 +16,7 @@ public class CityApplication {
 
 	public static void main(String[] args) {
         SpringApplication.run(CityApplication.class, args);
-        //initializer.initial();
+        initializer.initial();
 	}
 
 }

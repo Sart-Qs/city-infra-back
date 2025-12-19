@@ -1,10 +1,15 @@
 package com.back.city.controller;
 
-import com.back.city.dto.chat.ChatNotification;
+import com.back.city.dto.message.MessageRequest;
+import com.back.city.dto.status.StatusRequest;
 import com.back.city.entity.ChatMessageEntity;
 import com.back.city.entity.ChatRoomEntity;
-import com.back.city.services.ChatMessageService;
-import com.back.city.services.ChatRoomService;
+import com.back.city.entity.UserEntity;
+import com.back.city.mapper.ChatMapper;
+import com.back.city.repository.UserRepository;
+import com.back.city.services.chat.ChatMessageService;
+import com.back.city.services.chat.ChatRoomService;
+import com.back.city.services.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -22,30 +27,37 @@ import java.util.List;
 @RequestMapping("/api/chats")
 @AllArgsConstructor
 public class ChatController {
+    //TODO Перенести в сервисы
     private final ChatMessageService chatMessageService;
     private final SimpMessagingTemplate messagingTemplate;
     private final ChatRoomService chatRoomService;
+    private final ChatMapper chatMapper;
+    private final UserService userService;
+    private final UserRepository userRepository;
 
+    //TODO Пменять на DTO
     @MessageMapping("/chat")
-    public void processMessage(@Payload ChatMessageEntity chatMessage){
+    public void processMessage(@Payload MessageRequest chatMessage){
         ChatMessageEntity savedMsg = chatMessageService.saveMessage(chatMessage);
         messagingTemplate.convertAndSendToUser(String.valueOf(chatMessage.getRecipientId()), "/queue/messages",
-                ChatNotification.builder()
-                .id(savedMsg.getId())
-                        .senderId(savedMsg.getSenderId())
-                        .recipientId(savedMsg.getRecipientId())
-                        .content(savedMsg.getContent())
-                        .build());
+                chatMapper.toChatNotification(savedMsg));
+    }
+    //TODO Сделать чтобы у пользователя был свой пул юзеров чтобы получать статусы не всех пользователей
+    @MessageMapping("/status")
+    public void processStatus(@Payload StatusRequest status){
+        UserEntity user = userRepository.findUserById(status.getUserId());
+        user.setStatus(status.getStatus());
+        userRepository.save(user);
+        messagingTemplate.convertAndSend("/topic/online", user);
     }
 
-    @GetMapping("/messages/{senderId}/{recipientId}")
-    public List<ChatMessageEntity> findChatMessages (@PathVariable("senderId") Long senderId, @PathVariable("recipientId") Long recipientId){
-        return chatMessageService.findAllRoomMessages(senderId, recipientId);
+    @GetMapping("/messages/{chatId}")
+    public List<ChatMessageEntity> findChatMessages (@PathVariable Long chatId){
+        return chatMessageService.findAllRoomMessages(chatId);
     }
 
-    @GetMapping("/getChats/{senderId}")
-    public List<ChatRoomEntity> findAllChat(@PathVariable Long senderId){
-        System.out.println("senderId"+senderId);
-        return chatRoomService.getAllChatRooms(senderId);
+    @GetMapping("/getChats/{userId}")
+    public List<ChatRoomEntity> findAllChat(@PathVariable Long userId){
+        return chatRoomService.getAllChatRooms(userId);
     }
 }
